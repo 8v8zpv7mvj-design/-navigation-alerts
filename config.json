@@ -1,0 +1,43 @@
+{
+  "timezone": "Europe/Paris",
+  "check_hours_local": [
+    7,
+    17
+  ],
+  "navigation_hours": {
+    "start": 8,
+    "end": 20
+  },
+  "alert_lead_days": [
+    3,
+    1
+  ],
+  "wind": {
+    "min_knots": 12,
+    "max_knots": 40,
+    "accepted_direction_ranges_degrees": [
+      {
+        "name": "E à SE",
+        "min": 90,
+        "max": 135
+      },
+      {
+        "name": "SO à NO",
+        "min": 225,
+        "max": 315
+      }
+    ]
+  },
+  "spots": [
+    {
+      "name": "Le Brusc — Six-Fours-les-Plages",
+      "latitude": 43.07639,
+      "longitude": 5.80375
+    },
+    {
+      "name": "La Madrague — Giens",
+      "latitude": 43.04025,
+      "longitude": 6.11044
+    }
+  ]
+}

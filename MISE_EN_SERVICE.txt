@@ -1,0 +1,59 @@
+MISE EN SERVICE SIMPLE — RENDER + NTFY
+========================================
+
+Ce paquet est prévu pour un Cron Job Render : le programme se lance une fois
+par jour, vérifie les prévisions J-3 et J-1, envoie les alertes favorables,
+puis s'arrête.
+
+Horaire
+-------
+Le cron est réglé sur 06:00 UTC.
+Cela correspond à environ 08:00 en France pendant l'heure d'été et 07:00
+pendant l'heure d'hiver.
+
+1) Téléphone : ntfy
+-------------------
+- Installer l'application "ntfy" depuis l'App Store ou Google Play.
+- Choisir un nom de topic LONG et difficile à deviner, par exemple une suite
+  personnalisée de mots et chiffres.
+- Dans ntfy, s'abonner à ce topic.
+- Garder exactement ce nom : il faudra le saisir dans Render.
+
+2) GitHub
+---------
+- Créer un compte GitHub si nécessaire.
+- Créer un dépôt privé, par exemple "navigation-alerts".
+- Décompresser ce ZIP et envoyer TOUS les fichiers dans le dépôt.
+
+3) Render
+---------
+- Créer un compte Render et connecter le compte GitHub.
+- Choisir New > Blueprint.
+- Sélectionner le dépôt "navigation-alerts".
+- Render détectera automatiquement render.yaml.
+- Lors du déploiement, saisir NTFY_TOPIC avec le même nom que dans l'app ntfy.
+- Valider la création du cron job.
+
+4) Test
+-------
+- Dans Render, ouvrir le service "navigation-alerts".
+- Cliquer sur "Trigger Run".
+- Si les conditions météo J-3 ou J-1 sont favorables sur l'un des deux spots,
+  une notification sera envoyée.
+- S'il n'y a aucun créneau favorable au moment du test, les logs de Render
+  permettent tout de même de vérifier que le contrôle météo s'est exécuté.
+
+Configuration incluse
+---------------------
+Le Brusc — Six-Fours-les-Plages
+La Madrague — Giens
+Vent : 12 à 40 nœuds
+Directions : E à SE et SO à NO
+Créneaux analysés : 08:00 à 20:00
+Alertes : J-3 et J-1
+
+Sécurité
+--------
+Sur ntfy.sh, un topic non protégé est accessible à toute personne qui en connaît
+le nom. Utiliser un nom long et imprévisible. Pour davantage de confidentialité,
+ntfy permet aussi l'authentification par compte/token.

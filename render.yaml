@@ -1,0 +1,14 @@
+services:
+  - type: cron
+    name: navigation-alerts
+    runtime: python
+    region: frankfurt
+    plan: starter
+    schedule: "0 6 * * *"
+    buildCommand: echo "Aucune dépendance externe à installer"
+    startCommand: python run_once.py
+    envVars:
+      - key: NTFY_SERVER
+        value: https://ntfy.sh
+      - key: NTFY_TOPIC
+        sync: false
