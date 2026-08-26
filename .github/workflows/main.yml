@@ -1,0 +1,73 @@
+name: Windsurf Alert
+
+on:
+
+  workflow_dispatch:
+
+  schedule:
+
+    - cron: "0 6 * * *"
+
+permissions:
+
+  contents: write
+
+jobs:
+
+  windsurf-alert:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Recuperer le programme
+
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+
+        uses: actions/setup-python@v5
+
+        with:
+
+          python-version: "3.12"
+
+      - name: Tester la notification
+
+        if: github.event_name == 'workflow_dispatch'
+
+        env:
+
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+        run: |
+
+          python -c "import urllib.request; urllib.request.urlopen(urllib.request.Request('https://ntfy.sh/' + '${{ secrets.NTFY_TOPIC }}', data=b'Test Navigation Alerts : GitHub fonctionne', method='POST'))"
+
+      - name: Verifier la meteo
+
+        env:
+
+          NTFY_SERVER: https://ntfy.sh
+
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+
+        run: python run_once.py
+
+      - name: Sauvegarder l'etat
+
+        run: |
+
+          if ! git diff --quiet state.json; then
+
+            git config user.name "Navigation Alerts"
+
+            git config user.email "actions@github.com"
+
+            git add state.json
+
+            git commit -m "Update alert state"
+
+            git push
+
+          fi
