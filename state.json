@@ -1,12 +1,4 @@
 {
-  "Le Brusc — Six-Fours-les-Plages|J-3|2026-10-26": {
-    "favorable": true,
-    "last_change": "2026-10-23T13:38:09.918200+02:00"
-  },
-  "La Madrague — Giens|J-3|2026-10-26": {
-    "favorable": true,
-    "last_change": "2026-10-23T13:38:10.852271+02:00"
-  },
   "Le Brusc — Six-Fours-les-Plages|J-3|2026-10-27": {
     "favorable": false,
     "last_change": "2026-10-24T12:58:53.912760+02:00"
@@ -19,17 +11,9 @@
     "favorable": false,
     "last_change": "2026-10-25T13:34:06.250875+01:00"
   },
-  "Le Brusc — Six-Fours-les-Plages|J-1|2026-10-26": {
-    "favorable": true,
-    "last_change": "2026-10-25T13:34:06.362794+01:00"
-  },
   "La Madrague — Giens|J-3|2026-10-28": {
     "favorable": false,
     "last_change": "2026-10-25T13:34:06.751024+01:00"
-  },
-  "La Madrague — Giens|J-1|2026-10-26": {
-    "favorable": false,
-    "last_change": "2026-10-25T13:34:06.751073+01:00"
   },
   "Le Brusc — Six-Fours-les-Plages|J-3|2026-10-29": {
     "favorable": false,
@@ -158,5 +142,21 @@
   "La Madrague — Giens|J-1|2026-11-03": {
     "favorable": true,
     "last_change": "2026-11-02T18:03:45.696890+01:00"
+  },
+  "Le Brusc — Six-Fours-les-Plages|J-3|2026-11-06": {
+    "favorable": false,
+    "last_change": "2026-11-03T16:06:05.790288+01:00"
+  },
+  "Le Brusc — Six-Fours-les-Plages|J-1|2026-11-04": {
+    "favorable": true,
+    "last_change": "2026-11-03T16:06:05.843975+01:00"
+  },
+  "La Madrague — Giens|J-3|2026-11-06": {
+    "favorable": false,
+    "last_change": "2026-11-03T16:06:06.259496+01:00"
+  },
+  "La Madrague — Giens|J-1|2026-11-04": {
+    "favorable": true,
+    "last_change": "2026-11-03T16:06:06.287070+01:00"
   }
 }
